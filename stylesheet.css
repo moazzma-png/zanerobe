@@ -1,0 +1,249 @@
+/* General */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+* Header Carousel */
+#heroCarousel {
+  height: 60vh;  /* Set to 60% of the viewport height */
+  overflow: hidden;  /* Hide overflow to crop the image */
+  position: relative; /* Set relative position for proper text positioning */
+}
+
+/* Image inside the carousel */
+#heroCarousel img {
+  object-fit: cover;  /* Cover ensures the image covers the container */
+  object-position: top center;  /* Align the image to the top */
+  height: 100%;  /* Image will cover the height of the carousel */
+  width: 100%;  /* Ensure image stretches across the full width */
+}
+
+/* Ensuring proper text visibility */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);  /* Dark background for text visibility */
+  color: #ffffff;  /* White text */
+  padding: 15px 30px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+  /* Basic Navbar Styles */
+  .navbar {
+    background-color: #f8f9fa; /* Light background */
+    padding: 15px 20px; /* Increase padding for a spacious look */
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .navbar-brand {
+    font-size: 1.8rem; /* Bigger brand name */
+    font-weight: bold;
+    color: #dc3545; /* Red color for the brand */
+    text-transform: uppercase; /* Capitalize the brand name */
+    letter-spacing: 1px; /* Slight letter spacing */
+    transition: all 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+    color: #b21d2b; /* Darker red on hover */
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    color: #333; /* Default text color */
+    font-size: 1.1rem; /* Slightly bigger font size */
+    padding: 10px 20px; /* More padding on nav items */
+    text-transform: uppercase; /* Capitalize text */
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #dc3545; /* Red color on hover */
+    text-decoration: none; /* Remove underline */
+  }
+
+  /* Cart icon */
+  .nav-link.position-relative {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .fas.fa-shopping-cart {
+    font-size: 1.5rem; /* Larger cart icon */
+    margin-right: 10px; /* Space between icon and text */
+  }
+
+  .badge {
+    font-size: 0.9rem; /* Slightly smaller cart count */
+    padding: 0.4rem 0.6rem;
+    top: -10px;
+    right: -5px;
+    background-color: #dc3545; /* Red badge */
+    color: #fff;
+    font-weight: bold;
+  }
+
+  /* Navbar collapse button for mobile */
+  .navbar-toggler {
+    border-color: #dc3545;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #dc3545; /* Red hamburger icon */
+  }
+
+  /* Sticky Navbar */
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Shadow for Navbar */
+  .navbar-shadow {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+/* Hero Carousel Text */
+.carousel-caption h2 {
+  font-size: 2.5rem;  /* Adjusted font size */
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  animation: fadeDown 1s ease-in-out;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  margin-top: 10px;
+  animation: fadeUp 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .carousel-caption h2 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  /* Adjust height for mobile */
+  #heroCarousel {
+    height: 50vh;  /* Reduce height for mobile screens */
+  }
+}
+
+  /* Make category and product cards full width on mobile */
+  .category-card,
+  .product-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+/* Category Cards */
+.category-card {
+  flex: 1 1 220px;
+  max-width: 250px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+}
+
+.category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);  /* Zoom effect on hover */
+}
+
+.category-card h4 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Product Cards */
+.product-card {
+  flex: 1 1 220px;
+  max-width: 250px;
+  text-align: center;
+  border-radius: 10px;
+  background: white;
+  padding: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);  /* Lift effect on hover */
+}
+
+.product-card button {
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #111;
+  color: #eee;
+}
+
+.footer a:hover {
+  color: #f6c90e;
+  text-decoration: underline;
+}
+
+.footer i {
+  font-size: 16px;
+}
+.footer a img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000;
+}
